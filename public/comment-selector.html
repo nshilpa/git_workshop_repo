@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <link rel="stylesheet" href="/css/comment-selector.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+  </head>
+  <body style="overflow:hidden; overflow-y: scroll;">
+    <p class="js-spinner" style="text-align:center;">
+      <span class="spinner"></span>Loading data…
+    </p>
+    <form id="estimate">
+    <label for="tools">Select Tool:</label>
+    <select id="tools">
+    </select>
+    <label for="loc">Location:</label>
+    <input type="text" id="loc">
+    <label for="make">Make:</label>
+    <input type="text" id="make">
+    <label for="model">Model:</label>
+    <input type="text" id="model">
+    <label for="sn">S/N:</label>
+    <input type="text" id="sn">
+    <button id="save-btn" class="mod-primary">Save</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="./js/comment-selector.js"></script>
+  </body>
+</html>

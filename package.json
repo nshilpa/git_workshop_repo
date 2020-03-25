@@ -1,0 +1,34 @@
+{
+  "name": "trello-power-up-tutorial-part-1",
+  "version": "0.0.1",
+  "description": "A Power-Up to go along with the tutorial found at tech.trello.com",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.15.2",
+    "compression": "1.6.2",
+    "cors": "^2.8.1",
+    "express": "4.14.0",
+    "express-github-webhook": "1.0.6",
+    "jquery": "^1.12.4",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "simplemde": "^1.11.2",
+    "glitchup": "^1.1.0"
+  },
+  "engines": {
+    "node": "8.1.x"
+  },
+  "repository": {
+    "url": "https://github.com/trello/glitch-power-up-tutorial-part-one"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

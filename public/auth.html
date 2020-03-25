@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
+    <script src="https://trello.com/power-ups/power-up.min.js"></script>
+  </head>
+  <body>
+    <button id="auth-btn" type="submit" class="mod-primary">Authorize this Power-up to Access Trello</button>
+    <script>
+      var Promise = TrelloPowerUp.Promise;
+      var t = TrelloPowerUp.iframe();
+      
+      var trelloAuthUrl = 'https://trello.com/1/authorize?expiration=never&name=Update%20Tool%20Fields&scope=read,write&key=9b743ec3baa6babc696d682b84adf2aa&callback_method=fragment&return_url=https%3A%2F%2F' + window.location.host + '%2Fauth-success.html';
+      
+      var tokenLooksValid = function(token) {
+        return /^[0-9a-f]{64}$/.test(token);
+      }
+
+      document.getElementById('auth-btn').addEventListener('click', function(){
+        t.authorize(trelloAuthUrl, { height: 680, width: 580, validToken: tokenLooksValid })
+        .then(function(token){
+          // store the token in Trello private Power-Up storage
+          return t.set('member', 'private', 'token', token)
+        })
+        .then(function(){
+          // now that we have the token we needed
+          return t.popup({
+            title: 'Update Tool Fields',
+            url: './comment-selector.html',
+            height: 75
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
